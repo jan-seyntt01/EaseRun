@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+
+       <!-- Preconnect (before any external resources) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Preload key CSS files for faster rendering -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" as="style">
+
+        <!-- Main Stylesheets -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Spectral+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap + Google Font -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #eee;
+      padding: 0;
+      margin: 0;
+    }
+    html {
+        scrollbar-gutter: stable; 
+        }
+        .navbar{
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar-brand{
+            font-size: 30px;
+            font-weight: bold;
+            color: #f2f2f2;
+            font-family: "Montserrat", sans-serif;
+        }
+        .navbar-brand:hover {
+            color: #F2F2F2;
+            transition: color 0.3s ease; 
+        }
+        .navbar-brand:focus{
+            color: #F2F2F2;
+        }
+        .navbar-toggler {
+        border-color: #F2F2F2; 
+        }
+
+        .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(242,242,242, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .nav-link{
+            color: #f2f2f2;
+            font-family: "Montserrat", sans-serif;
+            
+        }
+        .navbar-nav .nav-item {
+        margin: 0 15px;
+        }
+        .nav-link:focus,
+        .nav-link:hover {
+        color: #4c6473; /* Hover color */
+        border-bottom: 2px solid #f2f2f2;
+        transition: 0.3 ease;
+        }
+
+        .nav-link.active,
+        .nav-link:active {
+        color: #4c6473; 
+        font-weight: bold;
+        border-bottom: 2px solid #4c6473; 
+        }
+
+        .cart-icon {
+        display: flex;
+        align-items: center;
+        }
+
+        .cart-icon i {
+        transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .cart-icon i:hover {
+        transform: scale(1.2);
+        color: #4c6473; 
+        }
+        section.body {
+  margin-top: 80px;
+}
+
+/* Category Filter Buttons */
+.filter-btn {
+  background-color: transparent;
+  border: 2px solid #171F26;
+  color: #171F26;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #171F26;
+  color: #fff;
+}
+
+/* Product Section */
+section.body {
+  margin-top: 90px;
+  background-color: #f8f9fa;
+  padding-bottom: 60px;
+}
+
+/* Product Cards */
+.product-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.3s ease;
+  border: 1px solid #e6e6e6a2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-img-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.08);
+}
+
+.product-info {
+  padding: 20px 15px 25px;
+}
+
+.product-name {
+  font-weight: 600;
+  color: #171F26;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #4c6473;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.add-to-cart {
+  background-color: #171F26;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #4c6473;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+  .product-img-container {
+    height: 200px;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+     .footer-link {
+        display: block;
+        color: #cccccc;
+        text-decoration: none;
+        margin-bottom: 6px;
+        transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+        color: #ffffff;
+        }
+
+        .footer-text {
+        color: #d1d1d1;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        }
+
+        .social-icon {
+        color: #cccccc;
+        font-size: 20px;
+        transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+        color: #ffffff;
+        }
+
+        footer h5 {
+        color: #ffffff;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-size: 1.2rem;
+        font-family: "Spectral SC", serif;
+        }
+
+        footer p, a{
+        color: #999999;
+        font-size: 0.9rem;
+        font-family: "Montserrat", sans-serif;
+        }
+
+        hr {
+        border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 767px) {
+        footer {
+            text-align: center;
+        }
+        .d-flex {
+            justify-content: center !important;
+        }
+        }
+  </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <!-- Brand -->
+            <a href="index.html" class="navbar-brand">EaseRun</a>
+
+            <!-- Mobile Toggle Button -->
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Cart Icon-->
+            <div class="cart-icon mt-3 mt-lg-0 ms-lg-3">
+                <a href="cart.html" class="text-decoration-none">
+                <i class="fa-solid fa-cart-shopping text-white fs-4"></i>
+                </a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+ <section class="body mt-5 pt-5">
+  <div class="container mt-4 pt-2">
+    <h2 class="mb-5 text-center fw-bold" style="color: #171F26;">Browse Our Shoe Collection</h2>
+
+    <!-- Category Filter -->
+    <div class="d-flex justify-content-center mb-5 flex-wrap gap-3">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="men">Men</button>
+      <button class="filter-btn" data-category="women">Women</button>
+      <button class="filter-btn" data-category="kids">Kids</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="row g-4 product-grid">
+
+      <!-- Men -->
+      <div class="col-sm-6 col-lg-4" data-category="men">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/1.jpg" alt="Men Running Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">361 Degree Flame 4</h5>
+            <p class="product-price">₱11,995.00</p>
+            <button class="add-to-cart" 
+                    data-name="361 Degree Flame 4" 
+                    data-price="11995.00" 
+                    data-image="img/1.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="men">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/4.jpg" alt="Men Trail Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Nike Vaporfly 3</h5>
+            <p class="product-price">₱9,499.00</p>
+            <button class="add-to-cart" 
+                    data-name="Nike Vaporfly 3" 
+                    data-price="9499.00" 
+                    data-image="img/4.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Women -->
+      <div class="col-sm-6 col-lg-4" data-category="women">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/pin3.jpg" alt="Women Sport Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Nike Vomero Plus</h5>
+            <p class="product-price">₱8,499.00</p>
+            <button class="add-to-cart" 
+                    data-name="Nike Vomero Plus" 
+                    data-price="8499.00" 
+                    data-image="img/pin3.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kids -->
+      <div class="col-sm-6 col-lg-4" data-category="kids">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/k1.jpg" alt="Kids Sneakers" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Dream Pairs Kids' Lightweight Reinforced Toe Sneakers</h5>
+            <p class="product-price">₱3,299.00</p>
+            <button class="add-to-cart" 
+                    data-name="Dream Pairs Kids' Lightweight Reinforced Toe Sneakers" 
+                    data-price="3299.00" 
+                    data-image="img/k1.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more examples -->
+        <div class="col-sm-6 col-lg-4" data-category="women">
+          <div class="product-card text-center h-100 shadow-sm">
+            <div class="product-img-container">
+              <img src="img/w1.jpg" alt="Women Air Sneakers" class="product-img">
+          </div>
+            <div class="product-info">
+              <h5 class="product-name">Nike Women's Free 5.0</h5>
+              <p class="product-price">₱7,899.00</p>
+              <button class="add-to-cart" 
+                    data-name="Nike Women's Free 5.0" 
+                    data-price="7899.00" 
+                    data-image="img/w1.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="men">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/pin11.jpg" alt="Men Trail Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Nike ZoomX Invincible Run 3 Blueprint Pack</h5>
+            <p class="product-price">₱9,499.00</p>
+            <button class="add-to-cart" 
+                    data-name="Nike ZoomX Invincible Run 3 Blueprint Pack" 
+                    data-price="9499.00" 
+                    data-image="img/pin11.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="men">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/puma1.jpg" alt="Men Trail Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Fast-RB Nitro Elite</h5>
+            <p class="product-price">₱9,499.00</p>
+            <button class="add-to-cart" 
+                    data-name="Fast-RB Nitro Elite" 
+                    data-price="9499.00" 
+                    data-image="img/puma1.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="kids">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/k2.jpg" alt="Kids Running Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">HOBIBEAR Kids Breathable Knit Sneakers</h5>
+            <p class="product-price">₱2,999.00</p>
+            <button class="add-to-cart" 
+                    data-name="HOBIBEAR Kids Breathable Knit Sneakers" 
+                    data-price="2999.00" 
+                    data-image="img/k2.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+       <!-- Add more examples -->
+      <div class="col-sm-6 col-lg-4" data-category="kids">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/k3.jpg" alt="Kids Running Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Kids Running Shoes</h5>
+            <p class="product-price">₱2,999.00</p>
+            <button class="add-to-cart" 
+                    data-name="Kids Running Shoes" 
+                    data-price="2999.00" 
+                    data-image="img/k3.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-6 col-lg-4" data-category="men">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/pin12.jpg" alt="Men Trail Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">New Balance FuelCell SuperComp Trainer v3</h5>
+            <p class="product-price">₱9,499.00</p>
+            <button class="add-to-cart" 
+                    data-name="New Balance FuelCell SuperComp Trainer v3" 
+                    data-price="9499.00" 
+                    data-image="img/pin12.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="women">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/w2.jpg" alt="Women Air Sneakers" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Nike Free Run 2</h5>
+            <p class="product-price">₱7,899.00</p>
+            <button class="add-to-cart" 
+                    data-name="Nike Free Run 2" 
+                    data-price="7899.00" 
+                    data-image="img/w2.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+       <!-- Add more examples -->
+      <div class="col-sm-6 col-lg-4" data-category="men">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/pin8.jpg" alt="Men Trail Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Nike Vomero 18</h5>
+            <p class="product-price">₱9,499.00</p>
+            <button class="add-to-cart" 
+                    data-name="Nike Vomero 18" 
+                    data-price="9499.00" 
+                    data-image="img/pin8.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="women">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/w3.jpg" alt="Women Air Sneakers" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Nike Free TR Fit 3</h5>
+            <p class="product-price">₱7,899.00</p>
+            <button class="add-to-cart" 
+                    data-name="Nike Free TR Fit 3" 
+                    data-price="7899.00" 
+                    data-image="img/w3.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="kids">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/k3.jpg" alt="Kids Running Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Kids Running Shoes</h5>
+            <p class="product-price">₱2,999.00</p>
+            <button class="add-to-cart" 
+                    data-name="Kids Running Shoes" 
+                    data-price="2999.00" 
+                    data-image="img/k3.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+       <!-- Add more examples -->
+      <div class="col-sm-6 col-lg-4" data-category="men">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/pin9.jpg" alt="Men Trail Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Nike Pegasus Trail 4 Gore-Tex</h5>
+            <p class="product-price">₱9,499.00</p>
+            <button class="add-to-cart" 
+                    data-name="Nike Pegasus Trail 4 Gore-Tex" 
+                    data-price="9499.00" 
+                    data-image="img/pin9.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="women">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/pin1.jpg" alt="Women Air Sneakers" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Nike Air Zoom Pegasus 40 in Sail/Black/White</h5>
+            <p class="product-price">₱7,899.00</p>
+            <button class="add-to-cart" 
+                    data-name="Nike Air Zoom Pegasus 40 in Sail/Black/White" 
+                    data-price="7899.00" 
+                    data-image="img/pin1.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="kids">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/k4.jpg" alt="Kids Running Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">DREAM PAIRS DuraPlay</h5>
+            <p class="product-price">₱2,999.00</p>
+            <button class="add-to-cart" 
+                    data-name="DREAM PAIRS DuraPlay" 
+                    data-price="2999.00" 
+                    data-image="img/k4.jpg">
+              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   <footer class="bg-black text-white py-5">
+        <div class="container">
+            <div class="row text-center text-md-start"> 
+
+            <!-- About EaseRun -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">About EaseRun</h5>
+                <p class="footer-text">
+                EaseRun was founded by runners to create affordable, high-performance shoes that deliver exceptional comfort and support through innovative materials—so you can simply enjoy the run.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                <li><a href="index.html" class="footer-link">Home</a></li>
+                <li><a href="about.html" class="footer-link">About Us</a></li>
+                <li><a href="product.html" class="footer-link">Products</a></li>
+                <li><a href="contact.html" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">Services</h5>
+                <ul class="list-unstyled footer-links">
+                <li><a href="#" class="footer-link">Service 1</a></li>
+                <li><a href="#" class="footer-link">Service 2</a></li>
+                <li><a href="#" class="footer-link">Service 3</a></li>
+                </ul>
+            </div>
+
+            <!-- Follow Us -->
+            <div class="col-md-3">
+                <h5 class="mb-3">Follow Us</h5>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                <a href="https://www.facebook.com/?_rdr%2F&__mmr=1&_rdr" class="social-icon" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://x.com/" class="social-icon" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            </div>
+
+            <!-- Copyright -->
+            <hr class="my-4 text-secondary opacity-25">
+            <div class="row">
+            <div class="col text-center">
+                <p class="mb-0 text-secondary">&copy; 2025 EaseRun. All rights reserved.</p>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const name = button.getAttribute('data-name');
+        const price = button.getAttribute('data-price');
+        const image = button.getAttribute('data-image');
+        const category = button.getAttribute('data-category'); 
+
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Add product object
+        cart.push({ name, price, image, quantity: 1 });
+
+        // Save back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert(`${name} has been added to your cart!`);
+      });
+    });
+
+     // Category Filter Script
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const productItems = document.querySelectorAll('.product-grid [data-category]');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+      const category = button.dataset.category;
+
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      productItems.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+          item.classList.add('fade-in');
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+  </script>
+</body>
+</html>

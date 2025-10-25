@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    
+     <!-- Preconnect (before any external resources) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Preload key CSS files for faster rendering -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" as="style">
+
+        <!-- Main Stylesheets -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Spectral+SC:wght@400;600;700&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <!-- Brand -->
+            <a href="index.html" class="navbar-brand">EaseRun</a>
+
+            <!-- Mobile Toggle Button -->
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Cart Icon-->
+            <div class="cart-icon mt-3 mt-lg-0 ms-lg-3">
+                <a href="cart.html" class="text-decoration-none">
+                <i class="fa-solid fa-cart-shopping text-white fs-4"></i>
+                </a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="hero-section">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <!--Indicators-->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+            <!--Slides-->
+            <div class="carousel-inner">
+
+                <!--Slide 1-->
+                <div class="carousel-item active h-100" style="background-image: url('img/c2.jpg')">
+                    <div class="overlay"></div>
+                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="hero-text">
+                            <h1 class="head-1">Run Faster. Go Further.</h1>
+                            <h2 class="head-2">Feel the difference in every step.</h2>
+                            <p class="category"><span>Explore the latest trends</span></p>  
+                            <a href="product.html" class="btn btn-lg">Shop Collection</a>
+                        </div>
+                    </div>
+                </div>
+                 <!--Slide 2-->
+                <div class="carousel-item h-100" style="background-image: url('img/c1.png')">
+                    <div class="overlay"></div>
+                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="hero-text">
+                            <h1 class="head-1">EaseRun X — Lighter. Faster. Better.</h1>
+                            <h2 class="head-2">Engineered for speed and comfort.</h2>
+                            <p class="category"><span>Run with comfort.</span></p>
+                            <a href="product.html" class="btn btn-lg">Exlpore Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Slide 3-->
+                <div class="carousel-item h-100" style="background-image: url('img/c3.jpg')">
+                    <div class="overlay"></div>
+                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="hero-text">
+                            <h1 class="head-1">Join 10,000+ Runners Worldwide.</h1>
+                            <h2 class="head-2">Run with passion. Run with us.</h2>
+                            <p class="category"><span>Join the Movement</span></p>
+                            <a href="contact.html" class="btn btn-lg">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Navigation Controls-->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-lg-12 col-md-8 col-sm-6 ">
+                <h2 class="text-start">Unleash Your Pace</h2>
+                <div class="d-flex justify-content-end">
+                    <p class="lead text-end">
+                        Find the rhythm that drives your every move forward.
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="best-seller pb-5 pt-5" id="best">
+        <div class="container">
+            <div class="row">
+                <h2 class="best">Best Sellers</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row pb-5 g-4">
+                <div class="col-sm-6 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/pin8.jpg" alt="shoe" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Nike Vomero 18</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                            <p class="card-text">₱9,499.00</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-sm-6 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/pin12.jpg" alt="shoe" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">New Balance FuelCell SuperComp Trainer v3</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                            <p class="card-text">₱9,499.00</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-sm-6 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/pin9.jpg" alt="shoe" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Nike Pegasus Trail 4 Gore-Tex</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                            <p class="card-text">₱9,499.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="d-flex justify-content-center align-items-center" style="height: 100px;">
+                    <button type="button" class="btn">See more</button>
+                </div>
+        </div>
+    </div>
+
+        <div class="container-fluid" id="ads">
+            <div class="row">
+                <div class="col-12 col-md-8 px-2 my-3">
+                    <video autoplay muted loop id="running" class="w-100 h-100 object-fit-cover">
+                        <source src="img/vid2.mp4" type="video/mp4"/>
+                    </video>
+                </div>
+                <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-start text-start ps-4">
+                    <h3>Find Your Ease in Every Stride</h3>
+                    <p>Comfort that keeps you going, stride after stride.</p>
+                </div>
+            </div>
+        </div>
+
+    <div class="container-fluid py-5" id="gallery">
+        <div class="row justify-content-center g-4">
+        <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+            <img src="img/g1.jpg" class="gallery-img" alt="Gallery Image 1" />
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+            <img src="img/g2.jpg" class="gallery-img offset-down" alt="Gallery Image 2" />
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+            <img src="img/g3.jpg" class="gallery-img" alt="Gallery Image 3" />
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+            <img src="img/g4.jpg" class="gallery-img offset-down" alt="Gallery Image 4" />
+        </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-black text-white py-5">
+        <div class="container">
+            <div class="row text-center text-md-start">
+
+            <!-- About EaseRun -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">About EaseRun</h5>
+                <p class="footer-text">
+                EaseRun was founded by runners to create affordable, high-performance shoes that deliver exceptional comfort and support through innovative materials—so you can simply enjoy the run.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                <li><a href="index.html" class="footer-link">Home</a></li>
+                <li><a href="about.html" class="footer-link">About Us</a></li>
+                <li><a href="product.html" class="footer-link">Products</a></li>
+                <li><a href="contact.html" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">Services</h5>
+                <ul class="list-unstyled footer-links">
+                <li><a href="#" class="footer-link">Service 1</a></li>
+                <li><a href="#" class="footer-link">Service 2</a></li>
+                <li><a href="#" class="footer-link">Service 3</a></li>
+                </ul>
+            </div>
+
+            <!-- Follow Us -->
+            <div class="col-md-3">
+                <h5 class="mb-3">Follow Us</h5>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                <a href="https://www.facebook.com/?_rdr%2F&__mmr=1&_rdr" class="social-icon" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://x.com/" class="social-icon" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            </div>
+
+            <!-- Copyright -->
+            <hr class="my-4 text-secondary opacity-25">
+            <div class="row">
+            <div class="col text-center">
+                <p class="mb-0 text-secondary">&copy; 2025 EaseRun. All rights reserved.</p>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

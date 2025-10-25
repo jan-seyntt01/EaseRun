@@ -1,0 +1,171 @@
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: #F0F1F2;
+        }
+        html {
+        scrollbar-gutter: stable; 
+        }
+        .navbar{
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar-brand{
+            font-size: 30px;
+            font-weight: bold;
+            color: #f2f2f2;
+            font-family: "Montserrat", sans-serif;
+        }
+        .navbar-brand:hover {
+            color: #F2F2F2;
+            transition: color 0.3s ease; 
+        }
+        .navbar-brand:focus{
+            color: #F2F2F2;
+        }
+        .navbar-toggler {
+        border-color: #F2F2F2; 
+        }
+
+        .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(242,242,242, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .nav-link{
+            color: #f2f2f2;
+            font-family: "Montserrat", sans-serif;
+            
+        }
+        .navbar-nav .nav-item {
+        margin: 0 15px;
+        }
+        .nav-link:focus,
+        .nav-link:hover {
+        color: #4c6473; /* Hover color */
+        border-bottom: 2px solid #f2f2f2;
+        transition: 0.3 ease;
+        }
+
+        .nav-link.active,
+        .nav-link:active {
+        color: #4c6473; 
+        font-weight: bold;
+        border-bottom: 2px solid #4c6473; 
+        }
+
+        .cart-icon {
+        display: flex;
+        align-items: center;
+        }
+
+        .cart-icon i {
+        transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .cart-icon i:hover {
+        transform: scale(1.2);
+        color: #4c6473; /* Matches your hover accent */
+        }
+
+        /*Body*/
+        .contact {
+        font-family: "Spectral SC", serif;
+        padding: 20px 0;
+        font-size: 30px;
+        font-weight: 800;
+        color: black;
+        }
+        .body h4{
+        font-family: "Spectral SC", serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: black;
+        }
+        .body a{
+            padding: 0 12px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            text-decoration: none;
+            color: #474F59;
+        }
+
+.contact {
+  font-family: "Spectral SC", serif;
+  font-weight: 600;
+  color: #000;
+}
+
+.form-card {
+  background-color: #f9f9f9;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.form-control {
+  border: 1px solid #ddd;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #4c6473;
+  box-shadow: none;
+}
+
+
+        /*Footer*/
+        .footer-link {
+        display: block;
+        color: #cccccc;
+        text-decoration: none;
+        margin-bottom: 6px;
+        transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+        color: #ffffff;
+        }
+
+        .footer-text {
+        color: #d1d1d1;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        }
+
+        .social-icon {
+        color: #cccccc;
+        font-size: 20px;
+        transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+        color: #ffffff;
+        }
+
+        footer h5 {
+        color: #ffffff;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-size: 1.2rem;
+        font-family: "Spectral SC", serif;
+        }
+
+        footer p, a{
+        color: #999999;
+        font-size: 0.9rem;
+        font-family: "Montserrat", sans-serif;
+        }
+
+        hr {
+        border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 767px) {
+        footer {
+            text-align: center;
+        }
+        .d-flex {
+            justify-content: center !important;
+        }
+        }
