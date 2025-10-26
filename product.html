@@ -697,13 +697,13 @@ section.body {
         const name = button.getAttribute('data-name');
         const price = button.getAttribute('data-price');
         const image = button.getAttribute('data-image');
-        const category = button.getAttribute('data-category'); 
+        const category = button.closest('[data-category]').getAttribute('data-category'); // ✅ ADD THIS
 
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         // Add product object
-        cart.push({ name, price, image, quantity: 1 });
+        cart.push({ name, price, image, category, quantity: 1 }); // ✅ INCLUDE category HERE
 
         // Save back to localStorage
         localStorage.setItem('cart', JSON.stringify(cart));

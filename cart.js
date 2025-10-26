@@ -30,7 +30,7 @@
         localStorage.setItem('cart', JSON.stringify(cartData));
       }
 
-      // 🔧 Render Cart Items
+      // Render Cart Items
       function renderCart() {
         cartContainer.innerHTML = '<h4 class="mb-4">Your Cart</h4>';
 
