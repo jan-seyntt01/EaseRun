@@ -1,16 +1,28 @@
         html {
             scrollbar-gutter: stable; 
         }
-        .Thumbnail img {
-            height: 400px;
-            width: 560px;
-            border-radius: 10px;
-            background: url(Images/bg.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        .thumbnail {
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        }
 
+        #running {
+        object-fit: cover;
+        border-radius: 10px;
+        }
+
+        /* Keep good proportions across screen sizes */
+        @media (max-width: 767px) {
+        .thumbnail {
+            height: auto;
+        }
+        }
+
+        @media (min-width: 768px) {
+        .thumbnail {
+            height: 100%; /* fills height equal to text beside it */
+        }
         }
 
         body {
