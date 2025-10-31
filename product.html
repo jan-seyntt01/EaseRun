@@ -283,6 +283,76 @@ section.body {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+
+.view-details {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.view-details:hover {
+  background-color: #171F26;
+  color: white;
+}
+
+
+.product-info .add-to-cart {
+  flex: 1;
+}
+
+.product-info .view-details {
+  flex: 1.7; /* bigger button */
+}
+#sizeOptions button.active {
+  background-color: #171F26;
+  color: white;
+  border-color: #171F26;
+}
+
+
+#productModal .modal-dialog {
+  max-width: 1000px; /* larger width */
+}
+#productModal .modal-content {
+  height: 650px; /* fixed modal height */
+  overflow: hidden;
+}
+#productModal .modal-body {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+#productModal .carousel,
+#productModal .carousel-inner,
+#productModal .carousel-item {
+  height: 100%;
+  max-height: 550px;
+}
+
+#productModal .carousel-item img {
+  width: 100%;
+  height: 100%;
+  max-height: 550px;
+  object-fit: contain; 
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+#productModal .col-md-6 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  #productModal .modal-content {
+    height: auto;
+  }
+  #productModal .carousel-item img {
+    max-height
+    : 400px;
+  }
+}
   </style>
 </head>
 
@@ -348,13 +418,23 @@ section.body {
           </div>
           <div class="product-info">
             <h5 class="product-name">361 Degree Flame 4</h5>
-            <p class="product-price">₱11,995.00</p>
-            <button class="add-to-cart" 
-                    data-name="361 Degree Flame 4" 
-                    data-price="11995.00" 
-                    data-image="img/1.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <p class="product-price">₱11,995</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="361 Degree Flame 4"
+                      data-price="11995.00"
+                      data-image="img/1.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="361 Degree Flame 4"
+                      data-price="11995.00"
+                      data-image="img/1.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+          </div>
           </div>
         </div>
       </div>
@@ -367,12 +447,22 @@ section.body {
           <div class="product-info">
             <h5 class="product-name">Nike Vaporfly 3</h5>
             <p class="product-price">₱9,499.00</p>
-            <button class="add-to-cart" 
-                    data-name="Nike Vaporfly 3" 
-                    data-price="9499.00" 
-                    data-image="img/4.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="Nike Vaporfly 3"
+                      data-price="9499.00"
+                      data-image="img/4.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="Nike Vaporfly 3"
+                      data-price="9499.00"
+                      data-image="img/4.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+          </div>
           </div>
         </div>
       </div>
@@ -381,17 +471,27 @@ section.body {
       <div class="col-sm-6 col-lg-4" data-category="women">
         <div class="product-card text-center h-100 shadow-sm">
           <div class="product-img-container">
-            <img src="img/pin3.jpg" alt="Women Sport Shoes" class="product-img">
+            <img src="img/w1-1.jpg" alt="Women Sport Shoes" class="product-img">
           </div>
           <div class="product-info">
-            <h5 class="product-name">Nike Vomero Plus</h5>
+            <h5 class="product-name">Nike Motiva</h5>
             <p class="product-price">₱8,499.00</p>
-            <button class="add-to-cart" 
-                    data-name="Nike Vomero Plus" 
-                    data-price="8499.00" 
-                    data-image="img/pin3.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="Nike Motiva"
+                      data-price="8499.00"
+                      data-image="img/w1-1.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="Nike Motiva"
+                      data-price="8499.00"
+                      data-image="img/w1-1.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -400,17 +500,27 @@ section.body {
       <div class="col-sm-6 col-lg-4" data-category="kids">
         <div class="product-card text-center h-100 shadow-sm">
           <div class="product-img-container">
-            <img src="img/k1.jpg" alt="Kids Sneakers" class="product-img">
+            <img src="img/n1.jpg" alt="Kids Sneakers" class="product-img">
           </div>
           <div class="product-info">
-            <h5 class="product-name">Dream Pairs Kids' Lightweight Reinforced Toe Sneakers</h5>
+            <h5 class="product-name">Nike Star Runner 5</h5>
             <p class="product-price">₱3,299.00</p>
-            <button class="add-to-cart" 
-                    data-name="Dream Pairs Kids' Lightweight Reinforced Toe Sneakers" 
-                    data-price="3299.00" 
-                    data-image="img/k1.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="Nike Star Runner 5"
+                      data-price="3299.00"
+                      data-image="img/n1.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="Nike Star Runner 5"
+                      data-price="3299.00"
+                      data-image="img/n1.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -419,17 +529,27 @@ section.body {
         <div class="col-sm-6 col-lg-4" data-category="women">
           <div class="product-card text-center h-100 shadow-sm">
             <div class="product-img-container">
-              <img src="img/w1.jpg" alt="Women Air Sneakers" class="product-img">
+              <img src="img/w2-1.jpg" alt="Women Air Sneakers" class="product-img">
           </div>
             <div class="product-info">
-              <h5 class="product-name">Nike Women's Free 5.0</h5>
+              <h5 class="product-name">Nike Vaporfly 4</h5>
               <p class="product-price">₱7,899.00</p>
-              <button class="add-to-cart" 
-                    data-name="Nike Women's Free 5.0" 
-                    data-price="7899.00" 
-                    data-image="img/w1.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="Nike Vaporfly 4"
+                      data-price="7899.00"
+                      data-image="img/w2-1.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="Nike Vaporfly 4"
+                      data-price="7899.00"
+                      data-image="img/w2-1.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -437,17 +557,27 @@ section.body {
       <div class="col-sm-6 col-lg-4" data-category="men">
         <div class="product-card text-center h-100 shadow-sm">
           <div class="product-img-container">
-            <img src="img/pin11.jpg" alt="Men Trail Shoes" class="product-img">
+            <img src="img/2.jpg" alt="Men Trail Shoes" class="product-img">
           </div>
           <div class="product-info">
-            <h5 class="product-name">Nike ZoomX Invincible Run 3 Blueprint Pack</h5>
+            <h5 class="product-name">Nike Vomero Plus</h5>
             <p class="product-price">₱9,499.00</p>
-            <button class="add-to-cart" 
-                    data-name="Nike ZoomX Invincible Run 3 Blueprint Pack" 
-                    data-price="9499.00" 
-                    data-image="img/pin11.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="Nike Vomero Plus"
+                      data-price="9499.00"
+                      data-image="img/2.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="Nike Vomero Plus"
+                      data-price="9499.00"
+                      data-image="img/2.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -455,17 +585,27 @@ section.body {
       <div class="col-sm-6 col-lg-4" data-category="men">
         <div class="product-card text-center h-100 shadow-sm">
           <div class="product-img-container">
-            <img src="img/puma1.jpg" alt="Men Trail Shoes" class="product-img">
+            <img src="img/3.jpg" alt="Men Trail Shoes" class="product-img">
           </div>
           <div class="product-info">
             <h5 class="product-name">Fast-RB Nitro Elite</h5>
             <p class="product-price">₱9,499.00</p>
-            <button class="add-to-cart" 
-                    data-name="Fast-RB Nitro Elite" 
-                    data-price="9499.00" 
-                    data-image="img/puma1.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="Fast-RB Nitro Elite"
+                      data-price="9499.00"
+                      data-image="img/3.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="Fast-RB Nitro Elite"
+                      data-price="9499.00"
+                      data-image="img/3.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -473,17 +613,27 @@ section.body {
       <div class="col-sm-6 col-lg-4" data-category="kids">
         <div class="product-card text-center h-100 shadow-sm">
           <div class="product-img-container">
-            <img src="img/k2.jpg" alt="Kids Running Shoes" class="product-img">
+            <img src="img/n2.jpg" alt="Kids Running Shoes" class="product-img">
           </div>
           <div class="product-info">
-            <h5 class="product-name">HOBIBEAR Kids Breathable Knit Sneakers</h5>
+            <h5 class="product-name">Nike Stellar Ride</h5>
             <p class="product-price">₱2,999.00</p>
-            <button class="add-to-cart" 
-                    data-name="HOBIBEAR Kids Breathable Knit Sneakers" 
-                    data-price="2999.00" 
-                    data-image="img/k2.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="Nike Stellar Ride"
+                      data-price="2999.00"
+                      data-image="img/n2.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="Nike Stellar Ride"
+                      data-price="2999.00"
+                      data-image="img/n2.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -492,73 +642,56 @@ section.body {
       <div class="col-sm-6 col-lg-4" data-category="kids">
         <div class="product-card text-center h-100 shadow-sm">
           <div class="product-img-container">
-            <img src="img/k3.jpg" alt="Kids Running Shoes" class="product-img">
-          </div>
-          <div class="product-info">
-            <h5 class="product-name">Kids Running Shoes</h5>
-            <p class="product-price">₱2,999.00</p>
-            <button class="add-to-cart" 
-                    data-name="Kids Running Shoes" 
-                    data-price="2999.00" 
-                    data-image="img/k3.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-sm-6 col-lg-4" data-category="men">
-        <div class="product-card text-center h-100 shadow-sm">
-          <div class="product-img-container">
-            <img src="img/pin12.jpg" alt="Men Trail Shoes" class="product-img">
-          </div>
-          <div class="product-info">
-            <h5 class="product-name">New Balance FuelCell SuperComp Trainer v3</h5>
-            <p class="product-price">₱9,499.00</p>
-            <button class="add-to-cart" 
-                    data-name="New Balance FuelCell SuperComp Trainer v3" 
-                    data-price="9499.00" 
-                    data-image="img/pin12.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4" data-category="women">
-        <div class="product-card text-center h-100 shadow-sm">
-          <div class="product-img-container">
-            <img src="img/w2.jpg" alt="Women Air Sneakers" class="product-img">
-          </div>
-          <div class="product-info">
-            <h5 class="product-name">Nike Free Run 2</h5>
-            <p class="product-price">₱7,899.00</p>
-            <button class="add-to-cart" 
-                    data-name="Nike Free Run 2" 
-                    data-price="7899.00" 
-                    data-image="img/w2.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
-          </div>
-        </div>
-      </div>
-
-       <!-- Add more examples -->
-      <div class="col-sm-6 col-lg-4" data-category="men">
-        <div class="product-card text-center h-100 shadow-sm">
-          <div class="product-img-container">
-            <img src="img/pin8.jpg" alt="Men Trail Shoes" class="product-img">
+            <img src="img/n3.jpg" alt="Kids Running Shoes" class="product-img">
           </div>
           <div class="product-info">
             <h5 class="product-name">Nike Vomero 18</h5>
+            <p class="product-price">₱2,999.00</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="Nike Vomero 18"
+                      data-price="2999.00"
+                      data-image="img/n3.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="Nike Vomero 18"
+                      data-price="2999.00"
+                      data-image="img/n3.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-6 col-lg-4" data-category="men">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/6.jpg" alt="Men Trail Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">New Balance FuelCell SuperComp Elite v5</h5>
             <p class="product-price">₱9,499.00</p>
-            <button class="add-to-cart" 
-                    data-name="Nike Vomero 18" 
-                    data-price="9499.00" 
-                    data-image="img/pin8.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="New Balance FuelCell SuperComp Elite v5"
+                      data-price="9499.00"
+                      data-image="img/6.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="New Balance FuelCell SuperComp Elite v5"
+                      data-price="9499.00"
+                      data-image="img/6.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -566,35 +699,27 @@ section.body {
       <div class="col-sm-6 col-lg-4" data-category="women">
         <div class="product-card text-center h-100 shadow-sm">
           <div class="product-img-container">
-            <img src="img/w3.jpg" alt="Women Air Sneakers" class="product-img">
+            <img src="img/w4.jpg" alt="Women Air Sneakers" class="product-img">
           </div>
           <div class="product-info">
-            <h5 class="product-name">Nike Free TR Fit 3</h5>
+            <h5 class="product-name">New Balance Fresh Foam X Kaiha Road</h5>
             <p class="product-price">₱7,899.00</p>
-            <button class="add-to-cart" 
-                    data-name="Nike Free TR Fit 3" 
-                    data-price="7899.00" 
-                    data-image="img/w3.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
-          </div>
-        </div>
-      </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="New Balance Fresh Foam X Kaiha Road"
+                      data-price="9499.00"
+                      data-image="img/w4.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
 
-      <div class="col-sm-6 col-lg-4" data-category="kids">
-        <div class="product-card text-center h-100 shadow-sm">
-          <div class="product-img-container">
-            <img src="img/k3.jpg" alt="Kids Running Shoes" class="product-img">
-          </div>
-          <div class="product-info">
-            <h5 class="product-name">Kids Running Shoes</h5>
-            <p class="product-price">₱2,999.00</p>
-            <button class="add-to-cart" 
-                    data-name="Kids Running Shoes" 
-                    data-price="2999.00" 
-                    data-image="img/k3.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+              <button class="add-to-cart"
+                      data-name="New Balance Fresh Foam X Kaiha Road"
+                      data-price="9499.00"
+                      data-image="img/w4.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -603,17 +728,27 @@ section.body {
       <div class="col-sm-6 col-lg-4" data-category="men">
         <div class="product-card text-center h-100 shadow-sm">
           <div class="product-img-container">
-            <img src="img/pin9.jpg" alt="Men Trail Shoes" class="product-img">
+            <img src="img/7.jpg" alt="Men Trail Shoes" class="product-img">
           </div>
           <div class="product-info">
-            <h5 class="product-name">Nike Pegasus Trail 4 Gore-Tex</h5>
+            <h5 class="product-name">New Balance FuelCell Rebel v5</h5>
             <p class="product-price">₱9,499.00</p>
-            <button class="add-to-cart" 
-                    data-name="Nike Pegasus Trail 4 Gore-Tex" 
-                    data-price="9499.00" 
-                    data-image="img/pin9.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="New Balance FuelCell Rebel v5"
+                      data-price="9499.00"
+                      data-image="img/7.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="New Balance FuelCell Rebel v5"
+                      data-price="9499.00"
+                      data-image="img/7.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -621,17 +756,27 @@ section.body {
       <div class="col-sm-6 col-lg-4" data-category="women">
         <div class="product-card text-center h-100 shadow-sm">
           <div class="product-img-container">
-            <img src="img/pin1.jpg" alt="Women Air Sneakers" class="product-img">
+            <img src="img/w5.jpg" alt="Women Air Sneakers" class="product-img">
           </div>
           <div class="product-info">
-            <h5 class="product-name">Nike Air Zoom Pegasus 40 in Sail/Black/White</h5>
+            <h5 class="product-name">New Balance Fresh Foam X Balos v1</h5>
             <p class="product-price">₱7,899.00</p>
-            <button class="add-to-cart" 
-                    data-name="Nike Air Zoom Pegasus 40 in Sail/Black/White" 
-                    data-price="7899.00" 
-                    data-image="img/pin1.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="New Balance Fresh Foam X Balos v1"
+                      data-price="9499.00"
+                      data-image="img/w5.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="New Balance Fresh Foam X Balos v1"
+                      data-price="9499.00"
+                      data-image="img/w5.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -639,17 +784,112 @@ section.body {
       <div class="col-sm-6 col-lg-4" data-category="kids">
         <div class="product-card text-center h-100 shadow-sm">
           <div class="product-img-container">
-            <img src="img/k4.jpg" alt="Kids Running Shoes" class="product-img">
+            <img src="img/n4.jpg" alt="Kids Running Shoes" class="product-img">
           </div>
           <div class="product-info">
-            <h5 class="product-name">DREAM PAIRS DuraPlay</h5>
+            <h5 class="product-name">New Balance Rave Run v2 Lace</h5>
             <p class="product-price">₱2,999.00</p>
-            <button class="add-to-cart" 
-                    data-name="DREAM PAIRS DuraPlay" 
-                    data-price="2999.00" 
-                    data-image="img/k4.jpg">
-              <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="New Balance Rave Run v2 Lace"
+                      data-price="2999.00"
+                      data-image="img/n4.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="New Balance Rave Run v2 Lace"
+                      data-price="2999.00"
+                      data-image="img/n4.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- Add more examples -->
+      <div class="col-sm-6 col-lg-4" data-category="men">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/5.jpg" alt="Men Trail Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Nike Pegasus Trail 5 GORE-TEX</h5>
+            <p class="product-price">₱9,499.00</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="Nike Pegasus Trail 5 GORE-TEX"
+                      data-price="9499.00"
+                      data-image="img/5.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="Nike Pegasus Trail 5 GORE-TEX"
+                      data-price="9499.00"
+                      data-image="img/5.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="women">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/w6.jpg" alt="Women Air Sneakers" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">New Balance Klutch x NB Cruz v3</h5>
+            <p class="product-price">₱7,899.00</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="New Balance Klutch x NB Cruz v3"
+                      data-price="7899.00"
+                      data-image="img/w6.jpg"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="New Balance Klutch x NB Cruz v3"
+                      data-price="7899.00"
+                      data-image="img/w6.jpg">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-category="kids">
+        <div class="product-card text-center h-100 shadow-sm">
+          <div class="product-img-container">
+            <img src="img/n5.png" alt="Kids Running Shoes" class="product-img">
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Nike Star Runner 5 GREEN</h5>
+            <p class="product-price">₱2,999.00</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark flex-fill view-details"
+                      data-name="Nike Star Runner 5 GREEN"
+                      data-price="2999.00"
+                      data-image="img/n5.png"
+                      data-description="High-performance men's running shoes designed for speed and comfort.">
+                <i class="fa-solid fa-eye me-2"></i>View
+              </button>
+
+              <button class="add-to-cart"
+                      data-name="Nike Star Runner 5 GREEN"
+                      data-price="2899.00"
+                      data-image="img/n5.png">
+                <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -709,6 +949,51 @@ section.body {
             </div>
         </div>
     </footer>
+
+
+<!-- Product Details Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="productModalLabel">Product Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body row align-items-center">
+        <div class="col-md-6">
+          <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="modalCarouselImages"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h4 id="modalProductName" class="fw-bold mb-3"></h4>
+          <p id="modalProductDescription" class="text-muted mb-3"></p>
+          <h5 id="modalProductPrice" class="fw-semibold text-dark mb-4"></h5>
+
+          <div class="mb-4">
+            <h6 class="fw-semibold mb-2">Select Size</h6>
+            <div id="sizeOptions" class="d-flex flex-wrap gap-2"></div>
+          </div>
+
+          <button class="btn btn-dark w-100 add-to-cart-modal">
+            <i class="fa-solid fa-cart-plus me-2"></i>Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
@@ -774,6 +1059,106 @@ function showToast(message) {
       });
     });
   });
+
+  // Modal Logic
+const viewDetailButtons = document.querySelectorAll('.view-details');
+const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+const sizeOptionsContainer = document.getElementById('sizeOptions');
+let selectedSize = null;
+
+// Example of multiple product images per item
+const productImages = {
+  "361 Degree Flame 4": ["img/1.jpg", "img/1-1.jpg", "img/1-2.jpg"],
+  "Nike Vaporfly 3": ["img/4.jpg", "img/4-1.jpg", "img/4-2.jpg", "img/4-3.jpg", "img/4-4.jpg"],
+  "Nike Motiva": ["img/w1-1.jpg", "img/w1-2.jpg", "img/w1-3.jpg", "img/w1-4.jpg", "img/w1-5.jpg"],
+  "Nike Star Runner 5": ["img/n1.jpg", "img/n1-1.jpg", "img/n1-2.jpg", "img/n1-3.jpg", "img/n1-4.jpg"],
+  "Nike Vaporfly 4": ["img/w2-1.jpg", "img/w2-2.jpg", "img/w2-3.jpg", "img/w2-4.jpg", "img/w2-5.jpg"],
+  "Nike Vomero Plus": ["img/2.jpg", "img/2-1.jpg", "img/2-2.jpg", "img/2-3.jpg", "img/2-4.jpg"],
+  "Fast-RB Nitro Elite": ["img/3.jpg", "img/3-1.jpg", "img/3-2.jpg", "img/3-3.jpg", "img/3-4.jpg"],
+  "Nike Stellar Ride": ["img/n2.jpg", "img/n2-1.jpg", "img/n2-2.jpg", "img/n2-3.jpg", "img/n2-4.jpg"],
+  "Nike Vomero 18": ["img/n3.jpg", "img/n3-1.jpg", "img/n3-2.jpg", "img/n3-3.jpg", "img/n3-4.jpg"],
+  "New Balance FuelCell SuperComp Elite v5": ["img/6.jpg", "img/6-1.jpg", "img/6-2.jpg", "img/6-3.jpg", "img/6-4.jpg"],
+  "New Balance Fresh Foam X Kaiha Road": ["img/w4.jpg", "img/w4-1.jpg", "img/w4-2.jpg", "img/w4-3.jpg", "img/w4-4.jpg"],
+  "New Balance FuelCell Rebel v5": ["img/7.jpg", "img/7-1.jpg", "img/7-2.jpg", "img/7-3.jpg", "img/7-4.jpg"],
+  "New Balance Fresh Foam X Balos v1": ["img/w5.jpg", "img/w5-1.jpg", "img/w5-2.jpg", "img/w5-3.jpg", "img/w5-4.jpg"],
+  "Nike Pegasus Trail 5 GORE-TEX": ["img/5.jpg", "img/5-1.png", "img/5-2.jpg", "img/5-3.png", "img/5-4.jpg"],
+  "New Balance Rave Run v2 Lace": ["img/n4.jpg", "img/n4-1.jpg", "img/n4-2.jpg", "img/n4-3.jpg", "img/n4-4.jpg"],
+  "New Balance Klutch x NB Cruz v3": ["img/w6.jpg", "img/w6-1.jpg", "img/w6-2.jpg", "img/w6-3.jpg", "img/w6-4.jpg"],
+  "Nike Star Runner 5 GREEN": ["img/n5.png", "img/n5-1.jpg", "img/n5-2.jpg", "img/n5-3.jpg", "img/n5-4.png"],
+  // fallback: single image will be used if not found
+};
+
+viewDetailButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const name = button.getAttribute('data-name');
+    const price = button.getAttribute('data-price');
+    const image = button.getAttribute('data-image');
+    const description = button.getAttribute('data-description');
+
+    document.getElementById('modalProductName').textContent = name;
+    document.getElementById('modalProductPrice').textContent = `₱${parseFloat(price).toLocaleString()}`;
+    document.getElementById('modalProductDescription').textContent = description;
+
+    // Create carousel images
+    const images = productImages[name] || [image];
+    const carouselInner = document.getElementById('modalCarouselImages');
+    carouselInner.innerHTML = images
+      .map((img, index) => `
+        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+          <img src="${img}" class="d-block w-100 rounded shadow-sm" alt="Product View ${index + 1}">
+        </div>
+      `)
+      .join('');
+
+// Generate size buttons (auto-detect kids category)
+sizeOptionsContainer.innerHTML = '';
+selectedSize = null;
+
+// Detect product category (from the card’s data-category)
+const productCard = button.closest('[data-category]');
+const category = productCard ? productCard.getAttribute('data-category') : '';
+
+// Choose size options based on category
+const sizes = category === 'kids'
+  ? [27, 28, 29, '30-31', 32]
+  : [37, 38, 39, 40, 41, 42, 43, 44];
+
+// Create buttons
+sizes.forEach(size => {
+  const btn = document.createElement('button');
+  btn.textContent = size;
+  btn.className = 'btn btn-outline-dark btn-sm';
+  btn.addEventListener('click', () => {
+    selectedSize = size;
+    document.querySelectorAll('#sizeOptions button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+  sizeOptionsContainer.appendChild(btn);
+});
+
+    // Show modal
+    productModal.show();
+  });
+});
+
+// Add to Cart from Modal
+document.querySelector('.add-to-cart-modal').addEventListener('click', () => {
+  const name = document.getElementById('modalProductName').textContent;
+  const price = document.getElementById('modalProductPrice').textContent.replace('₱', '').replace(',', '');
+  const image = document.querySelector('#modalCarouselImages .carousel-item.active img').src;
+
+  if (!selectedSize) {
+    showToast('Please select a size before adding to cart!');
+    return;
+  }
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push({ name, price, image, size: selectedSize, quantity: 1 });
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  showToast(`${name} (Size ${selectedSize}) has been added to your cart!`);
+  productModal.hide();
+});
   </script>
 </body>
 </html>
