@@ -117,8 +117,27 @@
 /* Product Section */
 section.body {
   margin-top: 90px;
-  background-color: #f8f9fa;
+  background-color: #D9D9D9;
   padding-bottom: 60px;
+}
+
+.filter-bar {
+  position: sticky;
+  top: 70px; /* Adjust to match navbar height */
+  z-index: 1020;
+  background-color: #D9D9D9;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  border-radius: 0 0 20px 20px; /* rounded lower edges */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* soft shadow to separate from content */
+}
+
+.filter-bar.scrolled {
+  background-color: rgba(217, 217, 217, 0.95);
+  padding: 6px 0;
+  transform: scale(0.99);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
 }
 
 /* Product Cards */
@@ -399,13 +418,14 @@ section.body {
   <div class="container mt-4 pt-2">
     <h2 class="mb-5 text-center fw-bold" style="color: #171F26;">Browse Our Shoe Collection</h2>
 
-    <!-- Category Filter -->
-    <div class="d-flex justify-content-center mb-5 flex-wrap gap-3">
-      <button class="filter-btn active" data-category="all">All</button>
-      <button class="filter-btn" data-category="men">Men</button>
-      <button class="filter-btn" data-category="women">Women</button>
-      <button class="filter-btn" data-category="kids">Kids</button>
-    </div>
+<!-- Category Filter -->
+<div class="filter-bar d-flex justify-content-center mb-5 flex-wrap gap-3">
+  <button class="filter-btn active" data-category="all">All</button>
+  <button class="filter-btn" data-category="men">Men</button>
+  <button class="filter-btn" data-category="women">Women</button>
+  <button class="filter-btn" data-category="kids">Kids</button>
+</div>
+
 
     <!-- Product Grid -->
     <div class="row g-4 product-grid">
@@ -1038,27 +1058,47 @@ function showToast(message) {
   }, 3000);
 }
 
-     // Category Filter Script
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const productItems = document.querySelectorAll('.product-grid [data-category]');
+// Category Filter Script
+const filterButtons = document.querySelectorAll('.filter-btn');
+const productItems = document.querySelectorAll('.product-grid [data-category]');
+const filterBar = document.querySelector('.filter-bar');
 
-      filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-      const category = button.dataset.category;
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const category = button.dataset.category;
 
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+    // Highlight active button
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
 
-      productItems.forEach(item => {
-        if (category === 'all' || item.dataset.category === category) {
-          item.style.display = 'block';
-          item.classList.add('fade-in');
-        } else {
-          item.style.display = 'none';
-        }
-      });
+    // Filter products
+    productItems.forEach(item => {
+      if (category === 'all' || item.dataset.category === category) {
+        item.style.display = 'block';
+        item.classList.add('fade-in');
+      } else {
+        item.style.display = 'none';
+      }
     });
+
+    // ⚡ Instantly jump to top of product section
+    const bodySection = document.querySelector('.body');
+    if (bodySection) {
+      const offsetTop = bodySection.offsetTop - 100; // adjust for navbar height
+      window.scrollTo(0, offsetTop);
+    }
   });
+});
+
+// Sticky filter bar effect
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  if (scrollPosition > 100) {
+    filterBar.classList.add('scrolled');
+  } else {
+    filterBar.classList.remove('scrolled');
+  }
+});
 
   // Modal Logic
 const viewDetailButtons = document.querySelectorAll('.view-details');
@@ -1159,6 +1199,7 @@ document.querySelector('.add-to-cart-modal').addEventListener('click', () => {
   showToast(`${name} (Size ${selectedSize}) has been added to your cart!`);
   productModal.hide();
 });
+
   </script>
 </body>
 </html>
