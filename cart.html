@@ -65,12 +65,11 @@
         }
 
         .nav-link.active,
-        .nav-link:active {
+        .nav-link:active{
         color: #4c6473; 
         font-weight: bold;
         border-bottom: 2px solid #4c6473; 
         }
-
         .cart-icon {
         display: flex;
         align-items: center;
@@ -82,8 +81,12 @@
 
         .cart-icon i:hover {
         transform: scale(1.2);
-        color: #4c6473; 
+        color: #4c6473 !important; 
         }
+.cart-icon a.active i {
+    color: #4c6473 !important; /* Active color */
+    transform: scale(1.1);
+}
 
         /* 🛒 Cart item styling */
         .body h4{
@@ -326,7 +329,7 @@
 
             <!-- Cart Icon-->
             <div class="cart-icon mt-3 mt-lg-0 ms-lg-3">
-                <a href="#cart" class="text-decoration-none">
+                <a href="#cart" class="text-decoration-none active">
                 <i class="fa-solid fa-cart-shopping text-white fs-4"></i>
                 </a>
             </div>
