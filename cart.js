@@ -42,7 +42,7 @@
 
         cartData.forEach((item, index) => {
           const isKidsProduct = item.category === "kids";
-          const sizeOptions = isKidsProduct ? ['27', '28', '29', '30-31', '32'] : ['38', '39', '40', '41', '42', '43'];
+          const sizeOptions = isKidsProduct ? ['27', '28', '29', '30-31', '32'] : ['37','38', '39', '40', '41', '42', '43', '44'];
           const sizeButtonsHTML = sizeOptions.map(size =>
             `<button class="size-btn" data-size="${size}">${size}</button>`
           ).join("");

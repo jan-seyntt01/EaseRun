@@ -1224,9 +1224,9 @@ sizes.forEach(size => {
   });
 });
 
-// ✅ Add to Cart from Modal (with category + size saved)
+// ✅ Add to Cart from Modal (keeps size + category)
 document.querySelector('.add-to-cart-modal').addEventListener('click', () => {
-  const name = document.getElementById('modalProductName').textContent;
+  const name = document.getElementById('modalProductName').textContent.trim();
   const price = parseFloat(document.getElementById('modalProductPrice').textContent.replace(/[₱,]/g, ''));
   const image = document.querySelector('#modalCarouselImages .carousel-item.active img').src;
 
@@ -1235,14 +1235,14 @@ document.querySelector('.add-to-cart-modal').addEventListener('click', () => {
     return;
   }
 
-  // 🧩 Get the product’s category from the open modal’s source button
+  // 🔍 Detect product category (men, women, kids) based on clicked "View Details" button
   const productCard = document.querySelector(`.view-details[data-name="${name}"]`)?.closest('[data-category]');
-  const category = productCard ? productCard.getAttribute('data-category') : 'men'; // default fallback
+  const category = productCard ? productCard.getAttribute('data-category') : 'men'; // fallback
 
-  // Load or create cart
+  // Load existing cart or create new one
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  // Check if same product + size already exists
+  // Check if same product & size already exists
   const existingItem = cart.find(item => item.name === name && item.size === selectedSize);
 
   if (existingItem) {
@@ -1251,9 +1251,10 @@ document.querySelector('.add-to-cart-modal').addEventListener('click', () => {
     cart.push({ name, price, image, size: selectedSize, category, quantity: 1 });
   }
 
-  // Save updated cart
+  // Save to localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
 
+  // Toast and close
   showToast(`${name} (Size ${selectedSize}) has been added to your cart!`);
   productModal.hide();
 });
