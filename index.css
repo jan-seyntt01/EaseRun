@@ -153,6 +153,7 @@
   padding: 20px 0;
   font-family: "Spectral SC", serif;
   color: #f2f2f2;
+  font-style: italic;
 }
 
 .section-padding p {
@@ -162,6 +163,7 @@
   letter-spacing: 2px;
   padding: 10px 0;
   color: #f2f2f2;
+  font-style: italic;
   font-family: "Montserrat", sans-serif;
 }
 
